@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vanilla Search Box</title>
+
+    <link rel="stylesheet" href="/public/components/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="/public/css/styles.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 bg-container">
+                    <div class="search-container">
+                        <form name="search" id="search">
+                            <div class="form-group col-md-4">
+                                <label for="position">I'm looking for:</label>
+                                <input type="text" id="position" class="form-control" placeholder="e.g cafe, bar, hairdresser" />
+                                <ul id="position-autocomplete"></ul>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="location">Located in:</label>
+                                <input type="text" id="location" class="form-control" placeholder="e.g Dublin" />
+                                <ul id="location-autocomplete"></ul>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <button class="btn btn-primary btn-custom" id="submit">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="search-result"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <script type="text/javascript" src="/public/components/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/public/components/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/public/js/bundle.js"></script>
+</body>
+</html>

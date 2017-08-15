@@ -1,0 +1,34 @@
+.wrapper {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #288bc6;
+    background-attachment: fixed!important;
+    background-position: center top!important;
+    background-repeat: no-repeat!important;
+    background: url('http://dkthlrncwzdcx.cloudfront.net/K/50/383447adda271ee1dce9df2d79bbf97a.png') no-repeat fixed center top #288bc6!important;
+    color: #333;
+}
+
+.bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    height: auto;
+    background: #ffffff;
+    box-shadow: 0 20px 20px rgba(50,50,50,0.75);
+}
+
+#search {
+    margin-top: 20px;
+}
+
+.btn-custom {
+    width: 100%;
+    margin-top: 9%;
+}

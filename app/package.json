@@ -1,0 +1,23 @@
+{
+  "name": "vanilla-search-box",
+  "version": "1.0.0",
+  "description": "Search functionality with vanilla JavaScript",
+  "scripts": {
+    "compile": "node_modules/.bin/webpack --progress --colors",
+    "compile:watch": "node_modules/.bin/webpack --progress --colors --watch"
+  },
+  "keywords": [
+    "Javascript"
+  ],
+  "author": "Liam Jay <lrjay90@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.0.1",
+    "eslint": "^4.4.1",
+    "webpack": "^3.5.4"
+  }
+}
