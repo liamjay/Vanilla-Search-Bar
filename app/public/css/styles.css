@@ -32,3 +32,12 @@
     width: 100%;
     margin-top: 9%;
 }
+
+.autocomplete li {
+    cursor: pointer;
+}
+
+.autocomplete li:hover {
+    background: #288bc6;
+    color: #ffffff;
+}

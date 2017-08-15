@@ -33,6 +33,13 @@ module.exports = {
             {
                 from: 'node_modules/bootstrap/dist/fonts',
                 to: 'public/components/bootstrap/fonts'
+            },{
+                from: 'node_modules/font-awesome/css/font-awesome.min.css',
+                to: 'public/components/font-awesome/css/font-awesome.min.css'
+            },
+            {
+                from: 'node_modules/font-awesome/fonts',
+                to: 'public/components/font-awesome/fonts'
             }
         ])
     ]
