@@ -89,4 +89,12 @@ submitbtn.addEventListener('click', function(e) {
     if (locationVal.length === 0) {
         ViewHelper.showElement('location-error-msg');
     }
+
+    var businesses = Service.getBusinesses(positionVal, locationVal);
+
+    setTimeout(function() {
+        if (businesses.length > 0) {
+            ViewHelper.generateBusinessList(businesses);
+        }
+    }, 2000);
 });

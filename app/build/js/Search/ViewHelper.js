@@ -52,4 +52,39 @@ ViewHelper.prototype.showElement = function(elementId) {
     var elem = document.getElementById(elementId);
     elem.style.display = 'block';
 }
+
+ViewHelper.prototype.generateBusinessList = function(list) {
+    var listContainer = document.getElementById('business-list');
+    listContainer.innerHTML = '';
+
+    var content = '';
+    
+    for (var i = 0; i < list.length; i++) {
+        content += '<li class="media">' +
+            '<div class="media-body">' +
+                '<h4><a href="http://www.yourlocal.ie/company/' + list[i]['_id'] + '">' +
+                    list[i]['name']['name'] +
+                '</a></h4>' +
+                '<p>' + list[i]['postal_address']['building_number'] + ' ' 
+                    + list[i]['postal_address']['address1'] + ' ' 
+                    + list[i]['postal_address']['address2'] + ' '
+                    + list[i]['postal_address']['town'] + ' '
+                    + list[i]['postal_address']['postcode'] +
+                '</p>' +
+                '<p><i class="fa fa-tag" aria-hidden="true"></i> ';
+
+        for (var j = 0; j < list[i]['categories'].length; j++) {
+            content += list[i]['categories'][j]['category_name'] + ' ';
+        }
+
+        content += '</p>';
+
+        content += '<hr />' +
+            '</div>'
+        '</li>';    
+    }
+
+    listContainer.innerHTML = content;
+}
+
 module.exports = ViewHelper;
