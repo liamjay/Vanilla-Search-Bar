@@ -12,7 +12,7 @@ ViewHelper.prototype.generateAutoComplete = function(element, suggestions) {
             i + '">' + suggestions[i].name + '</li';
     }
 
-    autocompleteResults.style.display = 'block';
+    this.showElement(element);
 }
 
 ViewHelper.prototype.generatePleaseWait = function(element) {
@@ -21,7 +21,7 @@ ViewHelper.prototype.generatePleaseWait = function(element) {
         '<i class="fa fa-spinner" aria-hidden="true"></i> Please wait' + 
         '</li>';
 
-    autocompleteResults.style.display = 'block';
+    this.showElement(element);
 }
 
 ViewHelper.prototype.generateNoneFound = function(element) {
@@ -30,15 +30,26 @@ ViewHelper.prototype.generateNoneFound = function(element) {
         '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> None Found' + 
         '</li>';
 
-    autocompleteResults.style.display = 'block';
+    this.showElement(element);
 }
 
-ViewHelper.prototype.setInputValue = function(elementId, parentElement) {
+ViewHelper.prototype.setInputValue = function(elementId, inputElement, autoCompleteElem) {
     var elem  = document.getElementById(elementId);
     var value = elem.innerHTML;
 
-    var input = document.getElementById(parentElement);
+    var input = document.getElementById(inputElement);
     input.value = value;
+
+    this.hideElement(autoCompleteElem);
 }
 
+ViewHelper.prototype.hideElement = function(elementId) {
+    var elem = document.getElementById(elementId);
+    elem.style.display = 'none';
+}
+
+ViewHelper.prototype.showElement = function(elementId) {
+    var elem = document.getElementById(elementId);
+    elem.style.display = 'block';
+}
 module.exports = ViewHelper;

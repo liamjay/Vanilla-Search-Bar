@@ -9,6 +9,7 @@ ViewHelper     = new ViewHelper();
 var categoryInput = document.getElementById('position');
 var locationInput = document.getElementById('location');
 
+
 categoryInput.addEventListener('input', function() {
     var value = this.value;
     var positionElem = 'position-autocomplete';
@@ -24,6 +25,14 @@ categoryInput.addEventListener('input', function() {
         setTimeout(function() {
             if (categories.length > 0) {
                 ViewHelper.generateAutoComplete(positionElem, categories);
+
+                var listItems = document.querySelectorAll('#position-autocomplete li');
+
+                for (var i = 0; i < listItems.length; i++) {
+                    listItems[i].addEventListener('click', function(e) {
+                        ViewHelper.setInputValue(e.target.id, 'position', positionElem);
+                    });
+                }
             } else {
                 ViewHelper.generateNoneFound(positionElem);
             }
@@ -48,16 +57,36 @@ locationInput.addEventListener('input', function() {
             if (locations.length > 0) {
                 ViewHelper.generateAutoComplete(locationElem, locations);
 
-                var listItems = document.querySelectorAll('.autocomplete li');
+                var listItems = document.querySelectorAll('#location-autocomplete li');
 
                 for (var i = 0; i < listItems.length; i++) {
                     listItems[i].addEventListener('click', function(e) {
-                        ViewHelper.setInputValue(e.target.id, 'location')
+                        ViewHelper.setInputValue(e.target.id, 'location', locationElem);
                     });
                 }
             } else {
                 ViewHelper.generateNoneFound(locationElem);
             }
         }, 2000);
+    }
+});
+
+var submitbtn = document.getElementById('submit');
+submitbtn.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    ViewHelper.hideElement('job-error-msg');
+    ViewHelper.hideElement('location-error-msg');
+
+    var positionVal = document.getElementById('position').value;
+
+    if (positionVal.length === 0) {
+        ViewHelper.showElement('job-error-msg');
+    }
+
+    var locationVal = document.getElementById('location').value;
+
+    if (locationVal.length === 0) {
+        ViewHelper.showElement('location-error-msg');
     }
 });
